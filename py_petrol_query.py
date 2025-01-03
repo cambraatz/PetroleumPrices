@@ -45,14 +45,15 @@ duoArea = "NUS"
 orderBy = "period"
 sortDir = "desc"
 
+# store in dictionary for URL generation...
 query_params = {
-    "api_key": "beQDZtHErIg0pcEBV27VDcAx1E8uzHInvpxUU5xy",
-    "frequency": "weekly",
-    "data[]": "value",
-    "facets[product][]": "EPD2D",
-    "facets[duoarea][]": "NUS",
-    "sort[0][column]": "period",
-    "sort[0][direction]": "desc"
+    "api_key": apiKey,
+    "frequency": frequency,
+    "data[]": target,
+    "facets[product][]": product,
+    "facets[duoarea][]": duoArea,
+    "sort[0][column]": orderBy,
+    "sort[0][direction]": sortDir
 }
 
 # establish target and request URL...
