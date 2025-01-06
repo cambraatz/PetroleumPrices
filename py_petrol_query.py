@@ -51,9 +51,7 @@ query_params = {
 connURL = "api.eia.gov"
 baseURL = "https://api.eia.gov/v2/petroleum/pri/gnd/data/?"
 query_string = "&".join(f"{key}={value}" for key,value in query_params.items())
-endPoint = baseURL + query_string
-
-print(endPoint)
+endPoint = baseURL + query_string + "&length=1"
 
 # define output file info...
 targetDir = "/tmp"
