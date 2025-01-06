@@ -37,23 +37,14 @@ def fetch_prices(connURL,endPoint):
 
 ''' initialize request parameters '''
 # define constants...
-apiKey = "beQDZtHErIg0pcEBV27VDcAx1E8uzHInvpxUU5xy"
-frequency = "weekly"
-target = "value"
-product = "EPD2D"
-duoArea = "NUS"
-orderBy = "period"
-sortDir = "desc"
-
-# store in dictionary for URL generation...
 query_params = {
-    "api_key": apiKey,
-    "frequency": frequency,
-    "data[]": target,
-    "facets[product][]": product,
-    "facets[duoarea][]": duoArea,
-    "sort[0][column]": orderBy,
-    "sort[0][direction]": sortDir
+    "api_key": "zCnde3PE6v1QAqOudgsAoaOffMJHoiNSDa4huoOX",
+    "frequency": "weekly",
+    "data[]": "value",
+    "facets[product][]": "EPD2D",
+    "facets[duoarea][]": "NUS",
+    "sort[0][column]": "period",
+    "sort[0][direction]": "desc"
 }
 
 # establish target and request URL...
@@ -62,8 +53,10 @@ baseURL = "https://api.eia.gov/v2/petroleum/pri/gnd/data/?"
 query_string = "&".join(f"{key}={value}" for key,value in query_params.items())
 endPoint = baseURL + query_string
 
+print(endPoint)
+
 # define output file info...
-targetDir = "" #"/tmp"
+targetDir = "/tmp"
 fileName = "py_petrol_query.txt"
 
 ''' logic to store data '''
